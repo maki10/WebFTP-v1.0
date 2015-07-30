@@ -84,6 +84,7 @@ class ftpFile
 	public function Write($Wfile, $Wtext){
 		$this->_write = fopen($Wfile, "w+");
 		fwrite($this->_write, stripslashes($Wtext));
+		return true;
 	}
 	
 	
