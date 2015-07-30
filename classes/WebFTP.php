@@ -4,7 +4,6 @@ class ftpFile
 {
 	protected $_conn; //Connect to ip and port ftp
 	protected $_user; // Connect user to ftp
-	private $__ftp;
 	public $put;
 	
 	//************ Connect to ftp
@@ -12,7 +11,6 @@ class ftpFile
 	{
 		$this->_conn = ftp_connect($ftp_server, $ftp_port);
 		$this->_user = ftp_login($this->_conn, $username, $pass);
-		$this->__ftp = "ftp://$username:$pass@$ftp_server:$ftp_port";
 	}
 	
 	public function Patch($patch)
@@ -78,7 +76,7 @@ class ftpFile
 	public function Read($RFile){
 		$this->_read = fopen($RFile, "r");
 		$this->readText = fread($this->_read, filesize($RFile));
-		echo $this->readText;
+		return $this->readText;
 	}
 	
 	protected $_write;
