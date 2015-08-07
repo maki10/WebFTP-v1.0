@@ -22,8 +22,8 @@ $ftp->CreateFolder('maki10_folder'); //---- Create Folder
 
 $ftp->DeleteFile('logo.png'); //---- Delete file
 
-$ftp->DeleteFolder('maki10_folder'); //---- If folder is not empty, first while deleted stuff insade then folder
+$ftp->DeleteFolder('maki10_folder'); //---- If the folder is not empty it will first delete the files and then folder
 
 $ftp->Read('sss.txt'); //--- Read a file
 
-$ftp->Write('sss.txt','Who is you boss?'); //---- Write to a file some text
+$ftp->Write('sss.txt','Who is you boss?'); //---- Write file, some text
